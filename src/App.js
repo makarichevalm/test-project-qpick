@@ -1,4 +1,5 @@
 import "./App.css";
+import Footer from "./Footer";
 import Header from "./Header";
 import ShowHeadphones from "./infoHP";
 
@@ -7,11 +8,12 @@ function App() {
     <div className="App">
       <Header />
       <div className="container">
-        <div className="TitleApp">Наушники</div>
+        <div className="TitleApp ms-5">Наушники</div>
         <ShowHeadphones type="wire" />
-        <div className="TitleApp mt-4"> Беспроводные наушники</div>
+        <div className="TitleApp ms-5"> Беспроводные наушники</div>
         <ShowHeadphones type="wireless" />
       </div>
+      <Footer />
     </div>
   );
 }

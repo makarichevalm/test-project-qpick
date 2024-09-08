@@ -1,11 +1,11 @@
 import React from "react";
 import "./Headphone.css";
-import star from "./star.svg";
+import star from "./icons/star.svg";
 
 function Headphone({ props }) {
   return (
     <div
-      className="col mainBlock d-flex flex-column justify-content-end shadow-lg p-4 mt-4 me-4 bg-body"
+      className="mainBlock d-flex flex-column justify-content-end shadow-sm p-4 m-3 bg-body"
       style={{ width: "29%" }}
       id={"hp_" + props.id}
     >
