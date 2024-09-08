@@ -7,9 +7,11 @@ function App() {
     <div className="App">
       <Header />
       <div className="container">
-        <div className="TitleApp mb-2">Наушники</div>
+        <div className="TitleApp">Наушники</div>
+        <ShowHeadphones type="wire" />
+        <div className="TitleApp mt-4"> Беспроводные наушники</div>
+        <ShowHeadphones type="wireless" />
       </div>
-      <ShowHeadphones />
     </div>
   );
 }

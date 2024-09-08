@@ -1,3 +1,28 @@
 .mainBlock{
   border-radius: 20px;
 }
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.hpTitle, .hpPrice, .score, .btnBuy{
+  font-family: "Montserrat", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 17px;
+}
+.hpPrice{
+  color: #FFA542;
+}
+.score{
+  color: #838383;
+}
+.btnBuy{
+  background-color: white;
+  border-radius: 5px;
+  border: none;
+  padding: none;
+}
+.btnBuy:hover{
+  text-decoration: underline;
+  box-shadow: 7px 7px 9px #EAEAEA;
+}
