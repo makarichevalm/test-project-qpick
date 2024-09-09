@@ -6,7 +6,7 @@ import ShowHeadphones from "./infoHP";
 
 function Shop() {
   return (
-    <div className="Shop">
+    <div className="Shop d-flex flex-column">
       <Header />
       <div className="container">
         <div className="TitleApp ms-5">Наушники</div>
@@ -14,7 +14,9 @@ function Shop() {
         <div className="TitleApp ms-5"> Беспроводные наушники</div>
         <ShowHeadphones type="wireless" />
       </div>
-      <Footer />
+      <div className="mt-auto">
+        <Footer />
+      </div>
     </div>
   );
 }

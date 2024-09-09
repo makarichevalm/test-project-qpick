@@ -2,15 +2,22 @@ import React from "react";
 import "./Cart.css";
 import Footer from "./Footer";
 import Header from "./Header";
+import CartProduct from "./CartProduct";
 
 function Cart() {
   return (
-    <div className="Cart">
+    <div className="Cart min-vh-100 d-flex flex-column">
       <Header />
       <div className="container">
-        <div className="TitleApp ms-5">Наушники</div>
+        <div className="TitleCart ms-5">Корзина</div>
+        <div className="d-flex justify-content-center">
+          <CartProduct />
+        </div>
       </div>
-      <Footer />
+
+      <div className="mt-auto">
+        <Footer />
+      </div>
     </div>
   );
 }
