@@ -1,20 +1,17 @@
+import React from "react";
 import "./App.css";
-import Footer from "./Footer";
-import Header from "./Header";
-import ShowHeadphones from "./infoHP";
+import Shop from "./Shop";
+import Cart from "./Cart";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <div className="container">
-        <div className="TitleApp ms-5">Наушники</div>
-        <ShowHeadphones type="wire" />
-        <div className="TitleApp ms-5"> Беспроводные наушники</div>
-        <ShowHeadphones type="wireless" />
-      </div>
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Shop />} />
+        <Route path="/cart" element={<Cart />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
