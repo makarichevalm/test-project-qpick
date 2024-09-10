@@ -1,3 +1,12 @@
-<div style="width: 100px; height: 100px; border-radius: 50%; background: blue; position: relative;">
-  <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">Привет, мир!</span>
-</div>
+import React from 'react'
+import './CircleNum.css'
+
+function CircleNum({text, font, size}) {
+  return (
+    <div className='CircleNum' style={{height: size, width: size}}>
+      <div className='text' style={{fontSize: font}}>{text}</div>
+    </div>
+  )
+}
+
+export default CircleNum

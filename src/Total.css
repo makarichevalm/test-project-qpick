@@ -1,0 +1,31 @@
+.Total{
+  border-radius: 20px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+.orderBtn, .tText, .totalSum {
+  font-family: "Montserrat", system-ui;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+.orderBtn{
+  border-radius: 20px;
+  height: 65px;
+  font-weight: 600;
+  font-size: 17px;
+  background-color: black;
+  color: white;
+  box-shadow: -1px -1px 4px rgba(13, 13, 12, 0.5);
+}
+.orderBtn:hover{
+  background-color: rgb(32, 32, 32);
+}
+.totalSum{
+  font-weight: 600;
+  font-size: 15px;
+}
+.tText{
+  font-weight: 600;
+  font-size: 15px;
+  text-transform: uppercase;
+}

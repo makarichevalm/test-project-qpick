@@ -1,3 +1,30 @@
 .CartProduct{
   border-radius: 20px;
 }
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+.cpTitle, .cpPrice, .cpCount, .cpSum{
+  font-family: "Montserrat", system-ui;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+.cpTitle{
+  font-weight: 500;
+  font-size: 17px;
+}
+.cpPrice{
+  font-weight: 600;
+  font-size: 15px;
+  color: #AAAAAA;
+}
+.cpCount{
+  font-weight: 600;
+  font-size: 17px;
+}
+.cpSum{
+  font-weight: 600;
+  font-size: 15px;
+}
+.circle:hover{
+  border-radius: 50%;
+  box-shadow: 3px 3px 3px #EAEAEA;
+}

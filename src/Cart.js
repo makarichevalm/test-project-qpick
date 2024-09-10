@@ -3,6 +3,7 @@ import "./Cart.css";
 import Footer from "./Footer";
 import Header from "./Header";
 import CartProduct from "./CartProduct";
+import Total from "./Total";
 
 function Cart() {
   return (
@@ -10,8 +11,9 @@ function Cart() {
       <Header />
       <div className="container">
         <div className="TitleCart ms-5">Корзина</div>
-        <div className="d-flex justify-content-center">
+        <div className="d-flex justify-content-around">
           <CartProduct />
+          <Total />
         </div>
       </div>
 

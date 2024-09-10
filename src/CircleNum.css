@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Montserrat", system-ui;
+  font-weight: 300;
+  color: white;
+}
+
+.CircleNum {
+  border-radius: 50%;
+  background: #FFCE7F;
+  position: relative;
+}

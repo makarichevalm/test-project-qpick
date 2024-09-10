@@ -5,10 +5,10 @@
 
 .hpTitle, .hpPrice, .score, .btnBuy{
   font-family: "Montserrat", system-ui;
-    font-optical-sizing: auto;
-    font-weight: 600;
-    font-style: normal;
-    font-size: 17px;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 17px;
 }
 .hpPrice{
   color: #FFA542;
