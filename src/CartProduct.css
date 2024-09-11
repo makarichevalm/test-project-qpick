@@ -28,3 +28,6 @@
   border-radius: 50%;
   box-shadow: 3px 3px 3px #EAEAEA;
 }
+.imgDelete :hover path{
+  fill: #b52626;
+}

@@ -12,7 +12,7 @@ function Footer() {
         className="shadow-sm bg-body d-flex flex-row p-4 justify-content-between"
         style={{ width: "92%" }}
       >
-        <div className="col-3 headtext">QPICK</div>
+        <div className="col-3 foottext">QPICK</div>
         <div className="col-6 d-flex flex-row justify-content-between">
           <div>
             <div className="pt-1 pb-1 category">Избранное</div>

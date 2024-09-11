@@ -6,12 +6,15 @@
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: "Montserrat", system-ui;
-  font-weight: 300;
+  font-weight: 500;
   color: white;
+  font-size: 13px;
 }
 
 .CircleNum {
   border-radius: 50%;
   background: #FFCE7F;
   position: relative;
+  width: 18px;
+  height: 18px;
 }

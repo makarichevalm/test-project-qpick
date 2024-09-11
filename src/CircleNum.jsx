@@ -1,10 +1,10 @@
 import React from 'react'
 import './CircleNum.css'
 
-function CircleNum({text, font, size}) {
+function CircleNum({text}) {
   return (
-    <div className='CircleNum' style={{height: size, width: size}}>
-      <div className='text' style={{fontSize: font}}>{text}</div>
+    <div className='CircleNum'>
+      <div className='text'>{text}</div>
     </div>
   )
 }
