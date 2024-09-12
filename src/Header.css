@@ -25,3 +25,7 @@
   left: 18px;
   top: -15px;
 }
+.cartBut{
+  border: none;
+  background-color: #EAEAEA;
+}

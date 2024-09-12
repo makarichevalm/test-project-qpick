@@ -1,27 +1,40 @@
-import React from "react";
+import React, {useState} from "react";
+
 import "./CartProduct.css";
 
 function CartProduct() {
+  const [counter, setCounter] = useState(1);
+  const handleDecrementClick = () => {
+    if (counter > 1)
+    setCounter(counter - 1);
+  }
+  const handleIncrementClick = () => {
+    setCounter(counter + 1);
+  }
   return (
     <div className="CartProduct col-6 d-flex flex-column justify-content-end shadow p-4 m-3 bg-body">
       <div className="d-flex flex-row">
-        <div className="">
+        <div>
           <div className="hpPhone d-flex justify-content-center">
             <img src="./img/hp1.png" alt="Наушники" className="w-75 h-auto" />
           </div>
           <div className="countBlock d-flex flex-row justify-content-center">
             <div className="circle">
+              <button className="minusBut" onClick={handleDecrementClick}>
               <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="15" cy="15" r="15" fill="#FFCE7F"/>
               <path d="M8 14H22V16H8V14Z" fill="white"/>
               </svg>
+              </button>
             </div>
-            <div className="cpCount mt-1 ms-4 me-4">1</div>
+            <div className="cpCount mt-1 ms-4 me-3">{counter}</div>
             <div className="circle">
+              <button className="plusBut" onClick={handleIncrementClick}>
               <svg width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="15.2056" cy="15" r="15" fill="#FFCE7F"/>
               <path d="M14.2056 14V8H16.2056V14H22.2056V16H16.2056V22H14.2056V16H8.20557V14H14.2056Z" fill="white"/>
               </svg>
+              </button>
             </div>
           </div>
         </div>
