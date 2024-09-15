@@ -2,8 +2,8 @@ import React from "react";
 import "./Cart.css";
 import Footer from "./Footer";
 import Header from "./Header";
-import CartProduct from "./CartProduct";
 import Total from "./Total";
+import ShowCartProducts from "./infoHP";
 
 function Cart() {
   return (
@@ -12,7 +12,7 @@ function Cart() {
       <div className="container">
         <div className="TitleCart ms-5">Корзина</div>
         <div className="d-flex justify-content-around">
-          <CartProduct />
+          <ShowCartProducts />
           <Total />
         </div>
       </div>

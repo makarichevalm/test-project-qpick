@@ -1,8 +1,24 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import "./Headphone.css";
 import star from "./icons/star.svg";
 
 function Headphone({ props }) {
+  const [textButton, setTextButton] = useState('Купить');
+  useEffect(() => {
+    const clicked = JSON.parse(sessionStorage.getItem('clicked_buttons')) || {};
+    if (clicked[props.id]) {
+      setTextButton('В корзине');
+    }
+  }, [props.id]);
+  const handleBuyClick = () => {
+    let clicked = JSON.parse(sessionStorage.getItem('clicked_buttons')) || {};
+    if(!clicked[props.id]){
+      setTextButton('В корзине');
+      clicked[props.id] = true;
+      sessionStorage.setItem('clicked_buttons', JSON.stringify(clicked));
+      window.location.reload();
+    }
+  };
   return (
     <div
       className="mainBlock d-flex flex-column justify-content-end shadow-sm p-4 m-3 bg-body"
@@ -24,8 +40,7 @@ function Headphone({ props }) {
           <div className="hpPrice d-flex justify-content-end mb-3">
             {props.price}
           </div>
-          <button type="button" className="btnBuy">
-            Купить
+          <button type="button" id={props.id} className="btnBuy"onClick={handleBuyClick}>{textButton}
           </button>
         </div>
       </div>

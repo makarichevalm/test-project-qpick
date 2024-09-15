@@ -1,22 +1,23 @@
 import React, {useState} from "react";
-
 import "./CartProduct.css";
 
-function CartProduct() {
+function CartProduct({props}) {
   const [counter, setCounter] = useState(1);
   const handleDecrementClick = () => {
     if (counter > 1)
     setCounter(counter - 1);
+  console.log("-1");
   }
   const handleIncrementClick = () => {
     setCounter(counter + 1);
+    console.log("+1");
   }
   return (
-    <div className="CartProduct col-6 d-flex flex-column justify-content-end shadow p-4 m-3 bg-body">
+    <div className="CartProduct col-6 d-flex flex-column justify-content-end shadow p-4 m-3 bg-body" id={"cp_" + props.id}>
       <div className="d-flex flex-row">
         <div>
           <div className="hpPhone d-flex justify-content-center">
-            <img src="./img/hp1.png" alt="Наушники" className="w-75 h-auto" />
+            <img src={props.img} alt="Наушники" className="w-75 h-auto" />
           </div>
           <div className="countBlock d-flex flex-row justify-content-center">
             <div className="circle">
@@ -39,8 +40,8 @@ function CartProduct() {
           </div>
         </div>
         <div className="d-flex flex-column justify-content-center">
-          <div className="cpTitle">Apple BYZ S852I</div>
-          <div className="cpPrice mt-2">2927 ₽</div>
+          <div className="cpTitle">{props.title}</div>
+          <div className="cpPrice mt-2">{props.price}</div>
         </div>
         <div className="ms-auto d-flex align-items-end flex-column">
           <div className="imgDelete"><svg width="21" height="17" viewBox="0 0 21 17" fill="none" xmlns="http://www.w3.org/2000/svg">
