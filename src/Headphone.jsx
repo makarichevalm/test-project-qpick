@@ -5,17 +5,20 @@ import star from "./icons/star.svg";
 function Headphone({ props }) {
   const [textButton, setTextButton] = useState('Купить');
   useEffect(() => {
-    const clicked = JSON.parse(sessionStorage.getItem('clicked_buttons')) || {};
-    if (clicked[props.id]) {
-      setTextButton('В корзине');
+    const selectedItems = JSON.parse(sessionStorage.getItem('cartProducts')) || [];
+    const hasItem = selectedItems.some((item) => item.id === props.id);
+    if (hasItem) {
+    setTextButton('В корзине');
     }
   }, [props.id]);
   const handleBuyClick = () => {
-    let clicked = JSON.parse(sessionStorage.getItem('clicked_buttons')) || {};
-    if(!clicked[props.id]){
+    const selectedItems = JSON.parse(sessionStorage.getItem('cartProducts')) || [];
+    const existItem = selectedItems.find(i => i.id === props.id);
+    if(!existItem){
       setTextButton('В корзине');
-      clicked[props.id] = true;
-      sessionStorage.setItem('clicked_buttons', JSON.stringify(clicked));
+      let newObject = {id: props.id, state: true, count: 1};
+      selectedItems.push(newObject);
+      sessionStorage.setItem('cartProducts', JSON.stringify(selectedItems));
       window.location.reload();
     }
   };
@@ -38,7 +41,7 @@ function Headphone({ props }) {
         </div>
         <div className="hpBlockline d-flex flex-column">
           <div className="hpPrice d-flex justify-content-end mb-3">
-            {props.price}
+            {props.price} ₽
           </div>
           <button type="button" id={props.id} className="btnBuy"onClick={handleBuyClick}>{textButton}
           </button>

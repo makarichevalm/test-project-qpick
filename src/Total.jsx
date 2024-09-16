@@ -4,7 +4,7 @@ import "./Total.css";
 function Total() {
   return (
     <div
-      className="Total col-4 d-flex flex-column justify-content-end shadow m-3 bg-body"
+      className="Total col-4 d-flex flex-column shadow m-3 bg-body"
       style={{ height: "120px" }}
     >
       <div className="totalText d-flex justify-content-between mt-4">

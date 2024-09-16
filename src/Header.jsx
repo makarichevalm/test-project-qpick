@@ -6,7 +6,7 @@ import CircleNum from './CircleNum';
 function Header() {
   const [textCart, setTextCart] = useState();
   useEffect(() => {
-    const CartNumber = JSON.parse(sessionStorage.getItem('clicked_buttons')) || {};
+    const CartNumber = JSON.parse(sessionStorage.getItem('cartProducts')) || [];
     console.log(CartNumber);
     if (CartNumber) {
       setTextCart(Object.keys(CartNumber).length);
