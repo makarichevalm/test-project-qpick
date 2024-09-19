@@ -93,24 +93,21 @@ export default function ShowCartProducts(){
   const dataSession = JSON.parse(sessionStorage.getItem('cartProducts'));
   console.log(JSON.stringify(dataSession));
   if (!dataSession) {
-       // Handle the case where the cart is empty
-       return (
-         <div className="container cartList">
-           <p>Your cart is empty.</p>
-         </div>
-       );
-     }
+    return (
+      <div className="container cartList">
+        <p>Корзина пуста</p>
+      </div>
+    );
+  }
   const products = [];
   for (const key of dataSession) {
-
     let elem = headphones.find(o => o.id === key.id);
-     if (elem) {
+    if (elem) {
       products.push(elem);
-      console.log("Added to products:", elem); // Debugging
-    } else {
-      console.log("Headphone not found:", key); // Debugging
     }
   }
+  const sum = products.reduce((total, headphone) => total + headphone.price, 0); 
+  console.log(sum);
   return (
     <div className="container cartList">
         {products.map((headphone) => (

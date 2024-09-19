@@ -1,19 +1,22 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
 import "./CartProduct.css";
+import { SummContext } from "./Cart";
 
 function CartProduct({props}) {
+  const {summValue, setSummValue} = useContext(SummContext);
   const [counter, setCounter] = useState(1);
   const handleDecrementClick = () => {
-    if (counter > 1)
+    if (counter > 1){
     setCounter(counter - 1);
-  console.log("-1");
+    setSummValue(summValue - props.price);
+    }
   }
   const handleIncrementClick = () => {
     setCounter(counter + 1);
-    console.log("+1");
+    setSummValue(summValue + props.price);
   }
   return (
-    <div className="CartProduct d-flex justify-content-between shadow p-4 m-3 bg-body" id={"cp_" + props.id} style={{width: "85%"}}>
+    <div className="CartProduct shadow p-4 m-3 bg-body" id={"cp_" + props.id} style={{width: "85%"}}>
       <div className="d-flex flex-row">
         <div>
           <div className="hpPhone d-flex justify-content-center">
