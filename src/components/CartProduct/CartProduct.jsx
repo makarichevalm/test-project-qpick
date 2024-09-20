@@ -1,16 +1,18 @@
 import React, {useState, useContext} from "react";
 import "./CartProduct.css";
-import { SummContext } from "./Cart";
+import { SummContext } from "../../pages/Cart/Cart";
 
 function CartProduct({props}) {
   const {summValue, setSummValue} = useContext(SummContext);
   const [counter, setCounter] = useState(1);
+
   const handleDecrementClick = () => {
     if (counter > 1){
     setCounter(counter - 1);
     setSummValue(summValue - props.price);
     }
   }
+  
   const handleIncrementClick = () => {
     setCounter(counter + 1);
     setSummValue(summValue + props.price);

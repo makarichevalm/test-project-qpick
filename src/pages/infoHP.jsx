@@ -1,6 +1,6 @@
 import React from "react";
-import Headphone from "./Headphone";
-import CartProduct from "./CartProduct";
+import Headphone from "../components/Headphone/Headphone";
+import CartProduct from "../components/CartProduct/CartProduct";
 
 export const headphones = [
   {
@@ -89,6 +89,7 @@ export function ShowHeadphones({ type }) {
     </div>
   );
 }
+
 export default function ShowCartProducts(){
   const dataSession = JSON.parse(sessionStorage.getItem('cartProducts'));
   console.log(JSON.stringify(dataSession));

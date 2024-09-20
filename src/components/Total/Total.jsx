@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
 import "./Total.css";
-import { SummContext } from "./Cart";
+import { SummContext } from "../../pages/Cart/Cart";
 
 function Total() {
   const {summValue} = useContext(SummContext);

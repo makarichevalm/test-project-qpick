@@ -1,9 +1,10 @@
+import { Link } from 'react-router-dom';
 import "./Footer.css";
-import "./Header.css";
-import lang from "./icons/Lang.png";
-import vk from "./icons/VK.svg";
-import tg from "./icons/Telegram.svg";
-import ws from "./icons/Whatsapp.svg";
+import "../Header/Header.css";
+import lang from "../../icons/Lang.png";
+import vk from "../../icons/VK.svg";
+import tg from "../../icons/Telegram.svg";
+import ws from "../../icons/Whatsapp.svg";
 
 function Footer() {
   return (
@@ -12,7 +13,7 @@ function Footer() {
         className="shadow-sm bg-body d-flex flex-row p-4 justify-content-between"
         style={{ width: "92%" }}
       >
-        <div className="col-3 foottext">QPICK</div>
+        <div className="col-3 foottext"><Link to="/" style={{ textDecoration: 'none', color: 'black' }}>QPICK</Link></div>
         <div className="col-6 d-flex flex-row justify-content-between">
           <div>
             <div className="pt-1 pb-1 category">Избранное</div>

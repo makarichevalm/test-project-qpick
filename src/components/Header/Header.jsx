@@ -1,15 +1,18 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect, useContext} from 'react';
 import { Link } from 'react-router-dom';
 import "./Header.css";
-import CircleNum from './CircleNum';
-import { useCount } from './CountContext';
+import CircleNum from '../CircleNum/CircleNum';
+import { CountContext } from "../../pages/Shop/Shop";
 
 function Header() {
-  const {cartProducts} = useCount();
-  const [textCart, setTextCart] = useState(0);
+  const {countProducts, setCountProducts} = useContext(CountContext);
+
   useEffect(() => {
-      setTextCart(cartProducts.length);
-  }, [cartProducts]);
+    const CartNumber = JSON.parse(sessionStorage.getItem('cartProducts')) || [];
+    if (CartNumber) {
+      setCountProducts(Object.keys(CartNumber).length);
+    }
+  }, [setCountProducts]);
   return (
     <div className="container mb-3">
       <header className="row pt-2 pb-2">
@@ -30,7 +33,7 @@ function Header() {
               </Link>
               </button>
             </div>
-            <div className="part numProd"><CircleNum text={textCart}/></div>
+            <div className="part numProd"><CircleNum text={countProducts}/></div>
           </div>
         </div>
       </header>
