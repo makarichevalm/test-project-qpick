@@ -106,8 +106,6 @@ export default function ShowCartProducts(){
       products.push(elem);
     }
   }
-  const sum = products.reduce((total, headphone) => total + headphone.price, 0); 
-  console.log(sum);
   return (
     <div className="container cartList">
         {products.map((headphone) => (
