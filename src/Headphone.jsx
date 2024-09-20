@@ -1,26 +1,18 @@
 import React, {useState, useEffect} from "react";
 import "./Headphone.css";
 import star from "./icons/star.svg";
+import { useCount } from "./CountContext";
+
 
 function Headphone({ props }) {
   const [textButton, setTextButton] = useState('Купить');
+  const {cartProducts, addToCart} = useCount();
   useEffect(() => {
-    const selectedItems = JSON.parse(sessionStorage.getItem('cartProducts')) || [];
-    const hasItem = selectedItems.some((item) => item.id === props.id);
-    if (hasItem) {
-    setTextButton('В корзине');
-    }
-  }, [props.id]);
+    const hasItem = cartProducts.some((item) => item.id === props.id);
+    setTextButton(hasItem ? 'В корзине' : 'Купить');
+  }, [cartProducts, props.id]);
   const handleBuyClick = () => {
-    const selectedItems = JSON.parse(sessionStorage.getItem('cartProducts')) || [];
-    const existItem = selectedItems.find(i => i.id === props.id);
-    if(!existItem){
-      setTextButton('В корзине');
-      let newObject = {id: props.id, state: true, count: 1};
-      selectedItems.push(newObject);
-      sessionStorage.setItem('cartProducts', JSON.stringify(selectedItems));
-      window.location.reload();
-    }
+    addToCart(props.id);
   };
   return (
     <div

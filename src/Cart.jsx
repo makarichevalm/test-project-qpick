@@ -10,18 +10,17 @@ function Cart() {
   const [summValue, setSummValue] = useState(0);
   useEffect(() => {
     const dataSession = JSON.parse(sessionStorage.getItem('cartProducts'));
-  let sum = 0; 
-  if (dataSession) {
-    const products = [];
-    for (const key of dataSession) {
-      let elem = headphones.find(o => o.id === key.id);
-      if (elem) {
-        products.push(elem);
+    let sum = 0; 
+    if (dataSession) {
+      const products = [];
+      for (const key of dataSession) {
+        let elem = headphones.find(o => o.id === key.id);
+        if (elem) {
+          products.push(elem);
+        }
       }
-    }
     sum = products.reduce((total, headphone) => total + headphone.price, 0); 
   }
-
   setSummValue(sum);
   },[])
 
@@ -41,7 +40,6 @@ function Cart() {
           </SummContext.Provider>
         </div>
       </div>
-
       <div className="mt-auto">
         <Footer />
       </div>
